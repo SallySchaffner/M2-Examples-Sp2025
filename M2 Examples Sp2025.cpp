@@ -1,9 +1,19 @@
-// M2 Examples Sp2025.cpp : This file contains examples for M2. Arrays, Linked Lists, and Recursion
-
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Arrays, Linked Lists, and Recursion\n";
+// Recursive function for Tower of Hanoi
+void towerOfHanoi(int n, char from, char to, char aux) {
+    if (n == 1) { // Base case
+        cout << "Move disk 1 from " << from << " to " << to << endl;
+        return;
+    }
+    towerOfHanoi(n - 1, from, aux, to); // Recursive case
+    cout << "Move disk " << n << " from " << from << " to " << to << endl;
+    towerOfHanoi(n - 1, aux, to, from); // Recursive case
 }
 
+int main() {
+    int disks = 3;
+    towerOfHanoi(disks, 'A', 'C', 'B');
+    return 0;
+}
