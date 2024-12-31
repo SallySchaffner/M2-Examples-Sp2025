@@ -1,14 +1,16 @@
 #include <iostream>
 using namespace std;
 
-int factorialTail(int n, int accumulator) {
-    if (n == 0 || n == 1) // Base case
-        return accumulator;
-    return factorialTail(n - 1, n * accumulator); // Tail recursive call
+// Recursive function to calculate the sum of an array
+int sumArray(int arr[], int n) {
+    if (n == 0) // Base case
+        return 0;
+    return arr[n - 1] + sumArray(arr, n - 1); // Recursive call
 }
 
 int main() {
-    int num = 5;
-    cout << "Factorial of " << num << " is: " << factorialTail(num, 1) << endl;
+    int arr[] = { 1, 2, 3, 4, 5 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout << "Sum of array elements: " << sumArray(arr, size) << endl;
     return 0;
 }
