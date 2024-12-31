@@ -1,45 +1,39 @@
 #include <iostream>
-#include <list>
+#include <forward_list>
 using namespace std;
 
 int main() {
-    list<int> myList = { 10, 20, 30 };
+    forward_list<int> myForwardList = { 10, 20, 30 };
 
-    cout << "Original list: " << endl;
-    for (auto& elem : myList) {
-        cout << elem << " ";
-    }
-    cout << endl;
+    // Insert after the first element
+    myForwardList.insert_after(myForwardList.begin(), 15);
 
-    // Insert at the beginning
-    myList.push_front(5);
-
-    // Insert at the end
-    myList.push_back(40);
-
-    cout << "Adding to beginning and end of list: " << endl;
-
-    // Access front and back
-    cout << "Front: " << myList.front() << ", Back: " << myList.back() << endl;
+    // Access front
+    cout << "Front: " << myForwardList.front() << endl;
 
     // Iterate and display elements
-    cout << "List elements: ";
-    for (auto& elem : myList) {
+    cout << "Forward List elements: ";
+    for (auto& elem : myForwardList) {
         cout << elem << " ";
     }
     cout << endl;
 
-    // Insert at any position
-    auto it = myList.begin();
-    advance(it, 2); // Move iterator to the 3rd element
-    myList.insert(it, 25);
+    // Insert at front
+    myForwardList.push_front(5);
 
-    // Display the list
-    cout << "After inserting 25 at index 2, List elements: ";
-    for (auto& elem : myList) {
+    // Insert after a specific position
+    auto it = myForwardList.begin();
+    myForwardList.insert_after(it, 15);
+
+    // Display the forward list
+    cout << "Forward List elements: ";
+    for (auto& elem : myForwardList) {
         cout << elem << " ";
     }
     cout << endl;
+
+
+
 
     return 0;
 }
