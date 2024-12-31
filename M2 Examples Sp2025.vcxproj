@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="M2 Examples Sp2025.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CircularLinkedList.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,9 +1,10 @@
-// M2 Examples Sp2025.cpp : This file contains examples for M2. Arrays, Linked Lists, and Recursion
+#include "CircularLinkedList.h"
 
-#include <iostream>
-
-int main()
-{
-    std::cout << "Arrays, Linked Lists, and Recursion\n";
+int main() {
+    CircularLinkedList list;
+    list.insert(10);
+    list.insert(20);
+    list.insert(30);
+    list.display(); // Output: 10 -> 20 -> 30 -> (back to head)
+    return 0;
 }
-
