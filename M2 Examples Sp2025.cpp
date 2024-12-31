@@ -1,9 +1,14 @@
-// M2 Examples Sp2025.cpp : This file contains examples for M2. Arrays, Linked Lists, and Recursion
+#include "SinglyLinkedList.h"
 
-#include <iostream>
+int main() {
+    SinglyLinkedList list;
+    list.insertAtBeginning(10);
+    list.insertAtEnd(20);
+    list.insertAtEnd(30);
+    list.display(); // Output: 10 -> 20 -> 30 -> nullptr
 
-int main()
-{
-    std::cout << "Arrays, Linked Lists, and Recursion\n";
+    list.deleteValue(20);
+    list.display(); // Output: 10 -> 30 -> nullptr
+
+    return 0;
 }
-
